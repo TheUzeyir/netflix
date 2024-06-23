@@ -1,0 +1,61 @@
+.mainPage_head {
+  position: relative;
+  overflow: hidden;
+}
+
+.mainPage_head_mainImg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 750px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  z-index: -1;
+}
+
+.mainPage_head_header_textBox {
+  margin: 100px 0 250px 0;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  position: relative;
+  z-index: 1;
+}
+
+.mainPage_head_header_textBox_headText {
+  font-size: 30px;
+}
+
+.mainPage_head_header_textBox_btn {
+  background: red;
+  color: white;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 25px;
+  padding: 15px 20px;
+}
+
+.mainPage_head_header_textBox_bigText {
+  font-weight: bold;
+  font-size: 50px;
+  text-align: center;
+}
+
+.mainPage_head_header_textBox_title {
+  font-size: 20px;
+  text-align: center;
+}
+
+.mainPage {
+  position: relative;
+}
+
+@media screen and (max-width: 1080px) {
+  .mainPage_head_header_textBox_bigText {
+    font-size: 30px;
+  }
+}/*# sourceMappingURL=mainPage.module.css.map */

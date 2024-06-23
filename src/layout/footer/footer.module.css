@@ -1,0 +1,42 @@
+.footer {
+  color: #B3B3B3;
+}
+
+.footer_title {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.footer_title:hover {
+  color: white;
+  text-decoration: none;
+}
+
+.footer_linkBox {
+  margin: 29px 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.footer_linkBox_ul_li {
+  margin-top: 16px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.footer_linkBox_ul_li:hover {
+  color: white;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 968px) {
+  .footer_linkBox {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (max-width: 968px) {
+  .footer_linkBox {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}/*# sourceMappingURL=footer.module.css.map */

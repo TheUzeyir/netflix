@@ -1,0 +1,73 @@
+.MainPageAccardion {
+  border-bottom: 10px solid #232323;
+}
+
+.MainPageAccardion_title {
+  text-align: center;
+  font-size: 50px;
+}
+
+.MainPageAccardion_card_container {
+  margin: 24px 0 72px 0;
+}
+
+.MainPageAccardion_card_box_icon {
+  cursor: pointer;
+  font-size: 30px;
+}
+
+.MainPageAccardion_card {
+  margin-bottom: 15px;
+}
+
+.MainPageAccardion_card_title {
+  font-size: 24px;
+  font-weight: normal;
+}
+
+.MainPageAccardion_card_box {
+  display: flex;
+  gap: 30px;
+  justify-content: space-between;
+  align-items: center;
+  background: #2D2D2D;
+  padding: 26px 24px;
+}
+
+.MainPageAccardion_card_desc {
+  background: #2D2D2D;
+  font-size: 24px;
+  margin-top: 2px;
+  padding: 26px 24px;
+}
+
+.MainPageAccardion_card_desc_disBlock {
+  display: none;
+}
+
+.MainPageAccardion_btn {
+  margin-top: 47px;
+  margin-left: 40%;
+  background: red;
+  color: white;
+  font-size: 25px;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 768px) {
+  .MainPageAccardion_title {
+    font-size: 30px;
+  }
+  .MainPageAccardion_card_title,
+  .MainPageAccardion_card_box_icon {
+    font-size: 20px;
+  }
+  .MainPageAccardion_btn {
+    margin-left: 25%;
+    padding: 5px 10px;
+    font-size: 20px;
+  }
+}/*# sourceMappingURL=mainPageAccardion.module.css.map */

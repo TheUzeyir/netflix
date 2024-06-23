@@ -1,0 +1,47 @@
+.mainPageInfoCard {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 10px solid #232323;
+  border-top: 10px solid #232323;
+}
+
+.mainPageInfoCard_img {
+  width: 100%;
+}
+
+.mainPageInfoCard_container {
+  display: flex;
+  align-items: center;
+}
+
+.mainPageInfoCard_container-reserve {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+}
+
+.mainPageInfoCard_textBox_title {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.mainPageInfoCard_textBox_desc {
+  font-size: 22px;
+}
+
+@media screen and (max-width: 968px) {
+  .mainPageInfoCard_img {
+    width: 70%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .mainPageInfoCard_img {
+    width: 70%;
+  }
+  .mainPageInfoCard_textBox_title {
+    font-size: 20px;
+  }
+  .mainPageInfoCard_textBox_desc {
+    font-size: 15px;
+  }
+}/*# sourceMappingURL=mainPageInfoCard.css.map */
