@@ -1,8 +1,7 @@
 .header {
   width: 100%;
   background: transparent;
-  position: absolute;
-  background: rgba(219, 213, 213, 0.8);
+  background: rgba(32, 29, 29, 0.8);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   z-index: 1;
 }
@@ -13,7 +12,6 @@
 
 .header::before {
   content: "";
-  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
