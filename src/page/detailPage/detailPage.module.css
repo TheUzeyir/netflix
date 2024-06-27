@@ -6,18 +6,18 @@
   color: #e4dedf;
 }
 
-.detailPage_film_goBack{
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    gap: 5px;
+.detailPage_film_goBack {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
-.detailPage_film_goBack:hover{
-    color: red;
-    cursor: pointer;
+.detailPage_film_goBack:hover {
+  color: red;
+  cursor: pointer;
 }
 
 .detailPage_film_mainVideo {
@@ -25,7 +25,8 @@
   height: 600px;
   border-radius: 10px;
   margin-bottom: 20px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .detailPage_film_detail {
@@ -67,8 +68,8 @@
   color: gray;
 }
 
-.detailPage_film_detail_card_title_box_title,.detailPage_film_detail_card_category_box_category{
-    font-weight: bold;
-    color: #D4D4D8;
-    font-size: 20px;
-}
+.detailPage_film_detail_card_title_box_title, .detailPage_film_detail_card_category_box_category {
+  font-weight: bold;
+  color: #D4D4D8;
+  font-size: 20px;
+}/*# sourceMappingURL=detailPage.module.css.map */

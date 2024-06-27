@@ -3,12 +3,12 @@ import style from "./mainPageAccardion.module.scss";
 import { FaPlus, FaMinus } from "react-icons/fa6";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from "react-router-dom";
  
 const MainPageAccardion = () => {
   const {t}=useTranslation()
   const [openIndexes, setOpenIndexes] = useState<number[]>([]);
-  
-
+  const navigate=useNavigate()
 
   const toggleOpenAcc = (index:number) => {
     setOpenIndexes((prevIndexes) =>
@@ -72,7 +72,7 @@ const MainPageAccardion = () => {
                 )}
             </div>
             ))}
-        <button className={style.MainPageAccardion_btn}>Watch Now <MdKeyboardArrowRight/></button>
+        <button className={style.MainPageAccardion_btn}  onClick={()=>navigate('/productPage')}>Watch Now <MdKeyboardArrowRight/></button>
         </div>
         </div>
     </div>

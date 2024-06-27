@@ -3,6 +3,7 @@ import Header from "../../layout/header/Header";
 import style from "./productPage.module.css";
 import { FaPlay, FaPlus } from "react-icons/fa";
 import data from "../../data.json";
+import Footer from "../../layout/footer/Footer";
 
 interface DataItem {
   id: number;
@@ -43,6 +44,10 @@ const ProductPage: React.FC = () => {
       setFilteredInput([]);
     }
   }, [input]);
+
+  const clickFilm = () => {
+    console.log("Film clicked");
+  };
 
   const ProductPageProductsInfoCard=useMemo(()=>{
     return <div className={style.productPage_products_info}>
@@ -118,21 +123,25 @@ const ProductPage: React.FC = () => {
             </div>
           </div>
         </div>
-         {filteredInput.length > 0 ? (
-        <div className={style.searchResults}>
-          {filteredInput.map((item) => (
-            <div key={item.id} className={style.searchResults_item}>
-              <img src={item.thumbnail} alt={item.title} className={style.searchResults_item_img}/>
-              <h2 className={style.searchResults_item_title}>{item.title}</h2>
-            </div>
-          ))}
-        </div>
-      ):(
-        <p className={style.inputNoDataFoundText}>No Data Found</p>
-      )}
+        {input.trim() !== "" && filteredInput.length === 0 ? (
+          <p className={style.inputNoDataFoundText}>No Data Found</p>
+        ) : input.trim() !== "" ? (
+          <div className={style.searchResults}>
+            {filteredInput.map((item) => (
+              <div key={item.id} className={style.searchResults_item}>
+                <img
+                  src={item.thumbnail}
+                  alt={item.title}
+                  className={style.searchResults_item_img}
+                />
+                <h2 className={style.searchResults_item_title}>{item.title}</h2>
+              </div>
+            ))}
+          </div>
+        ) : null}
         <div className={style.productPage_products}>
-          <h2>Popular On Netflix</h2>
-          <div className={style.productPage_products_box}>
+        <h2>Popular On Netflix</h2>
+          <div className={style.productPage_products_box} onClick={clickFilm}>
             {filteredData.map((item) => (
               <div
                 className={style.productPage_products_box_card}
@@ -150,6 +159,7 @@ const ProductPage: React.FC = () => {
             ))}
           </div>
         </div>
+        <Footer />
       </div>
     </div>
   );

@@ -8,9 +8,11 @@ import MainPageAccardion from '../../components/mainPageAccardion/MainPageAccard
 import Footer from '../../layout/footer/Footer';
 import Header from '../../layout/header/Header';
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
 
 const MainPage = () => {
     const { t } = useTranslation();
+    const navigate=useNavigate()
 
     return (
         <div className={style.mainPage}>
@@ -22,7 +24,7 @@ const MainPage = () => {
                         <h2 className={style.mainPage_head_header_textBox_headText}>{t('welcomeBack')}</h2>
                         <p className={style.mainPage_head_header_textBox_bigText}>{t('unlimitedMovies')}</p>
                         <p className={style.mainPage_head_header_textBox_title}>{t('watchAnywhere')}</p>
-                        <button className={style.mainPage_head_header_textBox_btn}>
+                        <button className={style.mainPage_head_header_textBox_btn} onClick={()=>navigate('/productPage')}>
                             {t('watchNow')} <MdKeyboardArrowRight />
                         </button>
                     </div>
