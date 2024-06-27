@@ -7,7 +7,8 @@ function App() {
   return (
     <>
       {/* <MainPage/> */}
-      <ProductPage/>
+      {/* <ProductPage/> */}
+      
     </>
   )
 }

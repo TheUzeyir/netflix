@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import Header from "../../layout/header/Header";
 import style from "./productPage.module.css";
 import { FaPlay, FaPlus } from "react-icons/fa";
 import data from "../../data.json";
 
-// Define the type for your data items
 interface DataItem {
   id: number;
   title: string;
@@ -45,33 +44,37 @@ const ProductPage: React.FC = () => {
     }
   }, [input]);
 
+  const ProductPageProductsInfoCard=useMemo(()=>{
+    return <div className={style.productPage_products_info}>
+    <img
+      src={selectedItem.thumbnail}
+      alt={selectedItem.title}
+      className={style.productPage_products_info_img}
+    />
+    <div className={style.productPage_products_info_descBox}>
+      <h2 className={style.productPage_products_info_descBox_title}>
+        {selectedItem.title}
+      </h2>
+      <p className={style.productPage_products_info_descBox_desc}>
+        {selectedItem.description}
+      </p>
+      <div className={style.productPage_products_info_btnBox}>
+        <button className={style.productPage_products_info_btnBox_btn}>
+          <FaPlay /> Play
+        </button>
+        <button className={style.productPage_products_info_btnBox_btn}>
+          <FaPlus /> My List
+        </button>
+      </div>
+    </div>
+  </div>
+  },[])
+
   return (
     <div className={style.productPage}>
       <Header />
       <div className={style.productPage_container}>
-        <div className={style.productPage_products_info}>
-          <img
-            src={selectedItem.thumbnail}
-            alt={selectedItem.title}
-            className={style.productPage_products_info_img}
-          />
-          <div className={style.productPage_products_info_descBox}>
-            <h2 className={style.productPage_products_info_descBox_title}>
-              {selectedItem.title}
-            </h2>
-            <p className={style.productPage_products_info_descBox_desc}>
-              {selectedItem.description}
-            </p>
-            <div className={style.productPage_products_info_btnBox}>
-              <button className={style.productPage_products_info_btnBox_btn}>
-                <FaPlay /> Play
-              </button>
-              <button className={style.productPage_products_info_btnBox_btn}>
-                <FaPlus /> My List
-              </button>
-            </div>
-          </div>
-        </div>
+        {ProductPageProductsInfoCard}
         <div className={style.productPage_header}>
           <input
             type="text"
@@ -115,7 +118,7 @@ const ProductPage: React.FC = () => {
             </div>
           </div>
         </div>
-        {filteredInput.length > 0 && (
+         {filteredInput.length > 0 ? (
         <div className={style.searchResults}>
           {filteredInput.map((item) => (
             <div key={item.id} className={style.searchResults_item}>
@@ -124,6 +127,8 @@ const ProductPage: React.FC = () => {
             </div>
           ))}
         </div>
+      ):(
+        <p className={style.inputNoDataFoundText}>No Data Found</p>
       )}
         <div className={style.productPage_products}>
           <h2>Popular On Netflix</h2>
