@@ -72,3 +72,10 @@
     color: #D4D4D8;
     font-size: 20px;
 }
+
+@media screen and (max-width:768px) {
+  .detailPage_film_detail_card{
+    align-items: center;
+    flex-direction: column;
+  }
+}

@@ -4,6 +4,7 @@ import style from "./productPage.module.css";
 import { FaPlay, FaPlus } from "react-icons/fa";
 import data from "../../data.json";
 import Footer from "../../layout/footer/Footer";
+import { Link } from "react-router-dom";
 
 interface DataItem {
   id: number;
@@ -143,19 +144,21 @@ const ProductPage: React.FC = () => {
         <h2>Popular On Netflix</h2>
           <div className={style.productPage_products_box} onClick={clickFilm}>
             {filteredData.map((item) => (
-              <div
-                className={style.productPage_products_box_card}
-                key={item.id}
-              >
-                <img
-                  src={item.thumbnail}
-                  alt={item.title}
-                  className={style.productPage_products_box_card_img}
-                />
-                <p className={style.productPage_products_box_card_title}>
-                  {item.title}
-                </p>
-              </div>
+              <Link key={item.id} to={`/product-details/${item.id}`}>              
+                <div
+                  className={style.productPage_products_box_card}
+                  key={item.id}
+                >
+                  <img
+                    src={item.thumbnail}
+                    alt={item.title}
+                    className={style.productPage_products_box_card_img}
+                  />
+                  <p className={style.productPage_products_box_card_title}>
+                    {item.title}
+                  </p>
+                </div>
+              </Link>
             ))}
           </div>
         </div>
